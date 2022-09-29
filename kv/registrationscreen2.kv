@@ -1,0 +1,178 @@
+<RegistrationScreen2>:
+    MDFloatLayout:
+        md_bg_color: 1,1,1,1
+        MDIconButton:
+            icon: "arrow-left"
+            pos_hint: {"center_y":.95}
+            user_font_color: "30sp"
+            theme_text_color: "Custom"
+            text_color: rgba(26,24,58,255)
+            on_release:
+                root.manager.transition: "left"
+                app.change_screen("login_screen")
+        MDLabel:
+            text: "H i!"
+            font_size: "26sp"
+            font_style: "Body1"
+            pos_hint: {"center_x":.25,"center_y":.85}
+            halign: "center"
+            color: rgba(0,0,59,255)
+
+        MDLabel:
+            text: "Create a new account"
+            font_size: "18sp"
+            font_style: "Subtitle1"
+            size_hint_x:.85
+            pos_hint: {"center_x":.5, "center_y":.79}
+            color: rgba(135,133,193,255)
+
+        MDFloatLayout:
+            size_hint: .7,.07
+            pos_hint: {"center_x":.5,"center_y":.68}
+            TextInput:
+                hint_text: "Username"
+                font_style: "Caption"
+                size_hint_y: .75
+                pos_hint: {"center_x":.43,"center_y":.5}
+                background_color: 1,1,1,0
+                foreground_color: rgba(0,0,59,255)
+                cursor_color: rgba(0,0,59,255)
+                font_size: "14sp"
+                cursor_width: "2sp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x":.45,"center_y":0}
+                size_hint_y: .03
+                md_bg_color: rgba(178,178,178,255)
+
+        MDFloatLayout:
+            size_hint: .7,.07
+            pos_hint: {"center_x":.5,"center_y":.56}
+            TextInput:
+                hint_text: "Email"
+                font_style: "Caption"
+                size_hint_y: .75
+                pos_hint: {"center_x":.43,"center_y":.5}
+                background_color: 1,1,1,0
+                foreground_color: rgba(0,0,59,255)
+                cursor_color: rgba(0,0,59,255)
+                font_size: "14sp"
+                cursor_width: "2sp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x":.45,"center_y":0}
+                size_hint_y: .03
+                md_bg_color: rgba(178,178,178,255)
+
+
+        MDFloatLayout:
+            size_hint: .7,.07
+            pos_hint: {"center_x":.5,"center_y":.44}
+            TextInput:
+                hint_text: "Password"
+                font_style: "Caption"
+                size_hint_y: .75
+                pos_hint: {"center_x":.43,"center_y":.5}
+                background_color: 1,1,1,0
+                foreground_color: rgba(0,0,59,255)
+                cursor_color: rgba(0,0,59,255)
+                font_size: "14sp"
+                cursor_width: "2sp"
+                multiline: False
+                password: True
+            MDFloatLayout:
+                pos_hint: {"center_x":.45,"center_y":0}
+                size_hint_y: .03
+                md_bg_color: rgba(178,178,178,255)
+
+        MDFloatLayout:
+            size_hint: .7,.07
+            pos_hint: {"center_x":.5,"center_y":.32}
+            TextInput:
+                hint_text: "Confirm Password"
+                font_style: "Caption"
+                size_hint_y: .75
+                pos_hint: {"center_x":.43,"center_y":.5}
+                background_color: 1,1,1,0
+                foreground_color: rgba(0,0,59,255)
+                cursor_color: rgba(0,0,59,255)
+                font_size: "14sp"
+                cursor_width: "2sp"
+                multiline: False
+                password: True
+            MDFloatLayout:
+                pos_hint: {"center_x":.45,"center_y":0}
+                size_hint_y: .03
+                md_bg_color: rgba(178,178,178,255)
+        MDFloatLayout:
+            size_hint: .7,.07
+            pos_hint: {"center_x":.5,"center_y":.29}
+            Label:
+                id: login_message
+                text: "Invalid email"
+                color: (1,0,0,1)
+                size_hint: .8,.1
+                pos_hint: {"center_x":.5,"center_y":.22}
+
+        Button:
+            text: "SIGNUP"
+            size_hint: .66,.065
+            background_color: 0,0,0,0
+            font_style: "Caption"
+            pos_hint: {"center_x":.5,"center_y":.22}
+            on_release: app.change_screen("home_screen")
+            canvas.before:
+                Color:
+                    rgba: (62,0,220,255)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [5]
+
+        MDLabel:
+            text: "or"
+            color: rgba(52,0,231,255)
+            pos_hint: {"center_y":.15}
+            font_size: "13sp"
+            font_style: "Subtitle1"
+            halign: "center"
+        MDFloatLayout:
+            md_bg_color: rgba(178,178,178,255)
+            size_hint: .3,.002
+            pos_hint: {"center_x":.3,"center_y":.15}
+        MDFloatLayout:
+            md_bg_color: rgba(178,178,178,255)
+            size_hint: .3,.002
+            pos_hint: {"center_x":.7,"center_y":.15}
+        MDLabel:
+            text: "Social Media Login"
+            font_style: "Subtitle2"
+            font_size:"13sp"
+            halign: "center"
+            pos_hint: {"center_y":.12}
+            color: rgba(135,133,193,255)
+        MDGridLayout:
+            cols: 3
+            size_hint: .48,.07
+            pos_hint: {"center_x":.5,"center_y":.08}
+            MDIconButton:
+                icon: "google"
+            MDIconButton:
+                icon: "facebook"
+            MDIconButton:
+                icon: "instagram"
+
+        MDLabel:
+            text: "Already have an account?"
+            font_style: "Subtitle1"
+            font_size: "11sp"
+            pos_hint: {"center_x":.75,"center_y":.04}
+            color: rgba(135,133,193,255)
+
+        MDTextButton:
+            text: "Sign In"
+            font_style: "Subtitle1"
+            font_size: "11sp"
+            pos_hint: {"center_x":.75,"center_y":.04}
+            color: rgba(52,0,231,255)
+            on_release: app.change_screen("registration_screen")

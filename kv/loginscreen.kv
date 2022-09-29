@@ -1,0 +1,56 @@
+<LoginScreen>:
+    MDFloatLayout:
+        md_bg_color: 1,1,1,1
+        Image:
+            source:"C:/Users/Gray/Pictures/VIBEZ.jpeg"
+            size_hint: .8,.8
+            pos_hint: {"center_x":.5,"center_y":.65}
+        MDLabel:
+            text: "OLA!!"
+            font_size: "23sp"
+            font_style: "Body1"
+            pos_hint: {"center_y":.38}
+            halign: "center"
+            color: rgba(34,34,34,255)
+        MDLabel:
+            text: "All vibez around you at the palm of your hands..."
+            font_size: "13sp"
+            font_style: "Body1"
+            size_hint_x:.85
+            pos_hint: {"center_x":.5, "center_y":.3}
+            halign: "center"
+            color: rgba(127,127,127,255)
+        Button:
+            text: "LOGIN"
+            size_hint: .66,.065
+            background_color: 0,0,0,0
+            font_style: "Caption"
+            pos_hint: {"center_x":.5,"center_y":.18}
+            on_release:
+                app.change_screen("registration_screen")
+            canvas.before:
+                Color:
+                    rgba: (62,0,220,255)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [5]
+        Button:
+            text: "SIGN UP"
+            size_hint: .66,.065
+            background_color: 0,0,0,0
+            font_style: "Caption"
+            pos_hint: {"center_x":.5,"center_y":.09}
+            on_release: root.manager.transition: "left"
+            color: rgba(62,0,220,255)
+            on_release:
+                app.change_screen("registration_screen2")
+            canvas.before:
+                Color:
+                    rgba: (62,0,220,255)
+                Line:
+                    width: 1.2
+                    rounded_rectangle: self.x,self.y,self.width, self.height, 5,5,5,5,100
+
+
+

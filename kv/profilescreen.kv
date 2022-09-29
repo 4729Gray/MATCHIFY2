@@ -1,0 +1,128 @@
+<ProfileScreen>:
+    MDFloatLayout:
+        md_bg_color: rgba(246,250.255,255)
+        ProfileCard:
+            size_hint_y: .65
+            pos_hint: {"center_y":.7}
+            elevation: 6
+            md_bg_color: 1,1,1,1
+            radius: [0,0,20,20]
+            MDIconButton:
+                icon: "arrow-left"
+                pos_hint: {"center_y":.91}
+                user_font_size: "20sp"
+                theme_text_color: "Custom"
+                text_color: rgba(71,92,119,255)
+                on_release:
+                    app.change_screen("home_screen")
+
+            MDIconButton:
+                icon: "dots-vertical"
+                pos_hint: {"center_x":.93, "center_y":.91}
+                user_font_size: "20sp"
+                theme_text_color: "Custom"
+                text_color: rgba(71,92,119,255)
+
+            MDLabel:
+                text: "My Profile"
+                font_style: "Caption"
+                font_size: "20sp"
+                pos_hint: {"center_x": .56, "center_y":.82}
+                color: rgba(71,92,119,255)
+            MDFloatLayout:
+                size_hint_x:.3
+                size_hint_y:.25
+                pos_hint: {"center_x":.5,"center_y":.62}
+                canvas:
+                    Color:
+                        rgba: (1,1,1,1)
+                    Ellipse:
+                        size: self.size
+                        pos: self.pos
+            MDFloatLayout:
+                size_hint_x:.3
+                size_hint_y:.25
+                pos_hint: {"center_x":.5,"center_y":.62}
+                canvas:
+                    Color:
+                        rgba: (1,1,1,1)
+                    Ellipse:
+                        size: self.size
+                        pos: self.pos
+                        source: "C:/Users/Gray/Pictures/ME.jpeg"
+
+            MDLabel:
+                text: "Gray Seanego"
+                font_style: "Caption"
+                font_size: "20sp"
+                pos_hint: { "center_y":.44}
+                halign: "center"
+                color: rgba(71,92,119,255)
+
+            MDLabel:
+                text: "Founder and creator of Vibez"
+                font_style: "H6"
+                font_size: "12sp"
+                pos_hint: { "center_y":.36}
+                halign: "center"
+                color: rgba(71,92,119,255)
+            MDLabel:
+                text: "Braamfontein RSA"
+                font_style: "H6"
+                font_size: "12sp"
+                pos_hint: { "center_y":.3}
+                halign: "center"
+                color: rgba(188,202,228,255)
+            GridLayout:
+                rows: 2
+                cols: 3
+                pos_hint: {"center_x":.5, "center_y":.15}
+                size_hint: .85,.12
+                MDLabel:
+                    text: "Media"
+                    font_style: "H6"
+                    font_size: "12sp"
+                    pos_hint: { "center_y":.3}
+                    halign: "center"
+                    color: rgba(188,202,228,255)
+
+                MDLabel:
+                    text: "Followers"
+                    font_style: "H6"
+                    font_size: "12sp"
+                    pos_hint: { "center_y":.3}
+                    halign: "center"
+                    color: rgba(188,202,228,255)
+
+                MDLabel:
+                    text: "Follows"
+                    font_style: "H6"
+                    font_size: "12sp"
+                    pos_hint: { "center_y":.3}
+                    halign: "center"
+                    color: rgba(188,202,228,255)
+
+                MDLabel:
+                    text: "25"
+                    font_style: "H4"
+                    bold: True
+                    font_size: "14sp"
+                    pos_hint: { "center_y":.3}
+                    halign: "center"
+                    color: rgba(71,92,119,255)
+                MDLabel:
+                    text: "489"
+                    bold: True
+                    font_style: "H4"
+                    font_size: "14sp"
+                    pos_hint: { "center_y":.3}
+                    halign: "center"
+                    color: rgba(71,92,119,255)
+                MDLabel:
+                    text: "10"
+                    bold: True
+                    font_style: "H4"
+                    font_size: "14sp"
+                    pos_hint: { "center_y":.3}
+                    halign: "center"
+                    color: rgba(71,92,119,255)

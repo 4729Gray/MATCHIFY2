@@ -1,0 +1,192 @@
+<HomeScreen>:
+    MDNavigationLayout:
+        ScreenManager:
+            Screen:
+                MDBottomNavigation:
+                    panel_color: "#eeeaea"
+                    selected_color_background: "#97ecf8"
+                    text_color_active: 0, 0, 0, 1
+
+                    MDBottomNavigationItem:
+                        name: 'screen 1'
+                        text: 'Home'
+                        icon: 'home-outline'
+
+                        MDBoxLayout:
+                            orientation: "vertical"
+
+                            MDBoxLayout:
+                                padding: "5dp"
+                                adaptive_height: True
+
+                                MDIconButton:
+                                    icon: "menu"
+                                    on_release: nav_drawer.set_state("open")
+
+                                MDLabel:
+                                    text: "Matchify"
+                                    font_style: "Caption"
+                                    halign: "center"
+                                    valign: "center"
+                                    font_size: 30
+
+                                MDIconButton:
+                                    icon: ""
+                            MDBoxLayout:
+
+
+                    MDBottomNavigationItem:
+                        name: 'screen 2'
+                        text: 'Explore'
+                        icon: 'magnify'
+
+                        MDLabel:
+                            text: "Explore"
+                            halign: "center"
+
+                    MDBottomNavigationItem:
+                        name: 'screen 3'
+                        text: 'Add'
+                        icon: 'movie-plus-outline'
+
+                        MDLabel:
+                            text: "Explore"
+                            halign: "center"
+
+                    MDBottomNavigationItem:
+                        name: 'screen 4'
+                        text: 'Inbox'
+                        icon: 'message-outline'
+                        badge_icon: "numeric-4"
+
+                        MDLabel:
+                            text: "Inbox"
+                            halign: "center"
+
+                    MDBottomNavigationItem:
+                        name: 'screen 5'
+                        text: 'Profile'
+                        icon: 'account-outline'
+
+
+                        MDBoxLayout:
+                            orientation: "vertical"
+
+                            MDBoxLayout:
+                                padding: "5dp"
+                                adaptive_height: True
+
+                                MDIconButton:
+                                    icon: "chevron-left"
+                                    on_release: app.change_screen("home_screen")
+
+                                MDLabel:
+                                    text: "EVENTS SCREEN"
+                                    font_style: "H5"
+                                    bold: True
+                                    halign: "center"
+                                    valign: "center"
+                                    font_size: "15sp"
+                                MDIconButton:
+                                    icon: ""
+                            MDBoxLayout:
+                                orientation: "vertical"
+                                y: "56dp"
+                                padding: "12dp"
+                                spacing: "12dp"
+
+                                ScrollView:
+                                    GridLayout:
+                                        padding: "12dp"
+                                        spacing: "12dp"
+                                        id: panel_container
+                                        cols: 1
+                                        size_hint_y: None
+                                        height: self.minimum_height
+                            MDFloatingActionButton:
+                                icon: "plus"
+                                md_bg_color: app.theme_cls.primary_color
+                                pos_hint: {"right":.9}
+                                on_release: app.change_screen("add_event_screen")
+
+        MDNavigationDrawer:
+            id: nav_drawer
+            radius: (0, 16, 16, 0) if self.anchor == "left" else (16, 0, 0, 16)
+            padding: "8dp"
+            spacing: "8dp"
+
+            MDNavigationDrawerMenu:
+                FitImage:
+                    source: "C:/Users/Gray/Pictures/VIBEZ.jpeg"
+                    size_hint: None, None
+
+                    radius: 24
+                MDNavigationDrawerHeader:
+                    title: "Vibez"
+                    title_font_style: "H5"
+                    title_color: "#4a4939"
+                    text: "All vibez around you at the palm of your hands..."
+                    text_size: "12sp"
+                    text_font_style: "Caption"
+                    spacing: "4dp"
+                    padding: "12dp", 0, 0, "56dp"
+
+
+                MDNavigationDrawerLabel:
+                    text: "Invites"
+
+                DrawerClickableItem:
+                    icon: "message-alert-outline"
+                    right_text: "+5"
+                    text_right_color: "#4a4939"
+                    text: "Messages"
+
+                DrawerClickableItem:
+                    icon: "format-paint"
+                    text: "Theme"
+
+                MDNavigationDrawerDivider:
+
+                MDNavigationDrawerLabel:
+                    text: "PUT YOUR SCREENS HERE"
+
+                DrawerLabelItem:
+                    icon: "wallet"
+                    text: "Wallet"
+
+                DrawerLabelItem:
+                    icon: "cog"
+                    text: "Settings"
+
+                DrawerLabelItem:
+                    icon: "information-outline"
+                    text: "Legal"
+
+                DrawerLabelItem:
+                    icon: "logout"
+                    text: "Log Out"
+                    on_release:
+                        app.change_screen("login_screen")
+                        nav_drawer.set_state("close")
+
+
+<DrawerClickableItem@MDNavigationDrawerItem>
+    focus_color: "#e7e4c0"
+    unfocus_color: "#f7f4e7"
+    text_color: "#4a4939"
+    icon_color: "#4a4939"
+    ripple_color: "#c5bdd2"
+    selected_color: "#0c6c4d"
+    spacing: "4sp"
+
+
+<DrawerLabelItem@MDNavigationDrawerItem>
+    focus_color: "#e7e4c0"
+    unfocus_color: "#f7f4e7"
+    bg_color: "#f7f4e7"
+    text_color: "#4a4939"
+    icon_color: "#4a4939"
+    _no_ripple_effect: True
+    spacing: "4sp"
+
+

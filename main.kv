@@ -1,0 +1,37 @@
+#:include kv/homescreen.kv
+#:include kv/loginscreen.kv
+#:include kv/registrationscreen.kv
+#:include kv/registrationscreen2.kv
+
+
+
+
+GridLayout:
+    cols: 1
+    ScreenManager:
+        id: screen_manager
+
+        LoginScreen:
+            name: "login_screen"
+            id: login_screen
+
+        RegistrationScreen:
+            name: "registration_screen"
+            id: registration_screen
+
+        RegistrationScreen2:
+            name: "registration_screen2"
+            id: registration_screen2
+
+        HomeScreen:
+            name: "home_screen"
+            id: home_screen
+
+        ProfileScreen:
+            name: "profile_screen"
+            id: profile_screen
+
+
+
+
+
